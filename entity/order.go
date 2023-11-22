@@ -35,6 +35,13 @@ func (o Order) calculateTotalOrder() float64 {
 	for _, item := range o.OrderItems {
 		total += item.calculateTotalItem()
 	}
+	totalOrder := o.calculateDiscount(total)
+	return totalOrder
+}
+
+func (o Order) calculateDiscount(totalOrder float64) float64 {
+	total := totalOrder
+	total -= float64(o.Coupon.Value) * total / 100
 	return total
 }
 
