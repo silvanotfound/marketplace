@@ -26,8 +26,8 @@ func Cpf_validate(document string) (bool, error) {
 }
 
 func calculated_digits(cpf string) (int, int) {
-	FACTOR_FIRST_DIGIT := 10
-	FACTOR_SECOND_DIGIT := 11
+	const FACTOR_FIRST_DIGIT = 10
+	const FACTOR_SECOND_DIGIT = 11
 	first_digit := calculate(cpf, FACTOR_FIRST_DIGIT)
 	second_digit := calculate(cpf, FACTOR_SECOND_DIGIT)
 	return first_digit, second_digit
