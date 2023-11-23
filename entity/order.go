@@ -1,6 +1,10 @@
 package entity
 
-import "marketplace/validator"
+import (
+	"errors"
+	"marketplace/validator"
+	"time"
+)
 
 type Order struct {
 	Id         string
@@ -49,6 +53,12 @@ func (o *Order) addOrderItem(orderItem OrderItem) {
 	o.OrderItems = append(o.OrderItems, orderItem)
 }
 
-func (o *Order) addCoupon(coupon Coupon) {
+func (o *Order) addCoupon(coupon Coupon, today time.Time) error {
+	if !coupon.ExpirionDate.IsZero() {
+		if today.After(coupon.ExpirionDate) {
+			return errors.New("Expired Coupon!")
+		}
+	}
 	o.Coupon = coupon
+	return nil
 }
