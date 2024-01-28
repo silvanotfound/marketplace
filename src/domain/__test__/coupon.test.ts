@@ -1,4 +1,4 @@
-import { Coupon, InvalidCouponError } from "../coupon.entity";
+import { Coupon, InvalidCouponError } from "../coupon";
 
 describe('Teste cupom de desconto', ()=> {
 

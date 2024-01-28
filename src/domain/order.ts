@@ -1,6 +1,6 @@
 import Cpf from "../shared/validator/cpf";
-import { Coupon } from "./coupon.entity";
-import { OrderItem } from "./orderItem.entity";
+import { Coupon } from "./coupon";
+import { OrderItem } from "./orderItem";
 
 export class Order {
 

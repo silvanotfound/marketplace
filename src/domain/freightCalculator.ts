@@ -1,4 +1,4 @@
-import { Order } from "./order.entity";
+import { Order } from "./order";
 
 export default class FreightCalculator {
     private DISTANCE: number = 1000;

@@ -1,4 +1,4 @@
-import { Item } from "./item.entity";
+import { Item } from "./item";
 
 export class OrderItem{
     constructor(readonly item: Item, readonly quantity: number) {        

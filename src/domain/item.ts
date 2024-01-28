@@ -4,7 +4,7 @@ export class DimensionsItem {
 }
 
 export class Item {
-    constructor(readonly Name: string, readonly price: number, readonly dimensions?: DimensionsItem ) {        
+    constructor(readonly id: number, readonly name: string, readonly price: number, readonly dimensions?: DimensionsItem ) {        
     }
 
     getVolume(): number {

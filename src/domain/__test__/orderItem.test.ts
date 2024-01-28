@@ -1,10 +1,10 @@
-import { Item } from "../item.entity";
-import { OrderItem } from "../orderItem.entity";
+import { Item } from "../item";
+import { OrderItem } from "../orderItem";
 
 describe('Teste criação item de pedido', ()=> {
 
     test('Deve deve calcular o item do pedido', () => {
-        const orderItem = new OrderItem(new Item("Lartena de sobrevivencia", 50), 2);
+        const orderItem = new OrderItem(new Item(1, "Lartena de sobrevivencia", 50), 2);
         expect(orderItem.getTotalValue()).toBe(100.00);
     });
 });
